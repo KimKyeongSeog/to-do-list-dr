@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const TodoCard = ({ todo }) => {
-    useEffect(() => console.log(todo), []);
+    useEffect(() => console.log(todo), []); 
 
   return (
     <li className={`h-12 flex items-center text-xl ${todo.isDone && "line-through"}`}>
