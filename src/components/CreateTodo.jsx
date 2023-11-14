@@ -5,14 +5,16 @@ const CreateTodo = ({ todos, getTodos, lastTodoID }) => {
 
   const onSubmitNewTodo = (e) => {
     e.preventDefault();
-// 제출한 값을 추가
+    // 제출한 값을 추가
     if (!newTodo) return;
-//값 없을 떄 return
+    //값 없을 떄 return
     const newTodos = [
       ...todos,
       { id: lastTodoID + 1, title: newTodo, isDone: false },
     ];
-//새로운 배열이 추가될 때 , 기존 todo값에서 새로운 todo를 추가함.
+    //새로운 배열이 추가될 때 , 기존 todo값에서 새로운 todo를 추가함.
+    // isDone : false 는 미완료 처리하므로써 todo list의 정보를 계속 받아오기 위한 설정값
+    
     localStorage.setItem("todos", JSON.stringify(newTodos)); 
     //새로운 배열을 저장하기 위함, 로컬스토리지는 문자열로 저장되기 떄문에 전환도 같이함
 
